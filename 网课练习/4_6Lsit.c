@@ -50,6 +50,7 @@ List Insert(int x, int i, List PtrL) {
 		s->Data = x;
 		s->Next = PtrL;
 		return s;
+
 	}
 	p = FindKth(i - 1, PtrL);
 	if (p == NULL) {//判断i值是否合理
@@ -65,3 +66,31 @@ List Insert(int x, int i, List PtrL) {
 	}
 }
 //删除
+List Delete(int i, List PtrL) {
+	List s, p;
+	if (i == 1) {
+		s = PtrL;
+		if (PtrL != NULL) {
+			PtrL = PtrL->Next;
+		}
+		else
+			return NULL;
+		frss(s);
+		return PtrL;
+	}
+	p = FindKth(i - 1, PtrL);
+	if (p == NULL) {
+		printf("第%d个结点不存在", i - 1);
+		return NULL;
+	}
+	else if (p->Next == NULL) {
+		printf("第%D个结点不存在", i);
+		return NULL;
+	}
+	else {
+		s = p->Next;
+		p->Next = s->Next;
+		free(s);
+		return PtrL;
+	}
+}
