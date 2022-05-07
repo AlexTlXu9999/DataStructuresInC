@@ -38,15 +38,26 @@ void Insert(int x, int n) {
 	temp3->next = temp1;
 	temp1->prev = temp3;
 }
+/// <summary>
+/// 用于实现常规打印链表
+/// </summary>
 void Print() {
+	printf("通过普通方式实现链表打印：");
 	struct Node* print = head;
 	while (print != NULL) {
 		printf(" %d", print->data);
 		print = print->next;
 	}
+	printf("\n");
 	return;
 }
+
+/// <summary>
+/// 实现反转链表
+/// </summary>
+/// <param name="print"></param>
 void ReversePrint(struct Node* print) {
+	printf("反转链表，递归实现：");
 	if (print == NULL) {
 		return;
 	}
@@ -54,8 +65,17 @@ void ReversePrint(struct Node* print) {
 	printf(" %d", print->data);
 
 }
-void ReversePrintForTwo(struct Node* print) {
 
+/// <summary>
+/// 实现双链表反转打印
+/// </summary>
+/// <param name="print"></param>
+void ReversePrintForTwo(struct Node* print) {
+	printf("双链表反转打印 ：");
+
+
+
+	printf("\n");
 }
 
 int main() {
@@ -64,9 +84,8 @@ int main() {
 	Insert(2, 1);
 	Insert(3, 1);
 	Insert(5, 1);
-	Insert(9, 1);//3 9 1 5 2
+	Insert(9, 1);//9 5 3 2 1 
 	Print();
-	printf("\n===============\n");
 	p = head;
 	ReversePrint(p);
 }
