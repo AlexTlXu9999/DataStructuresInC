@@ -6,7 +6,7 @@ struct Node {
 };
 struct Node* head;
 void InsertAtHead(int x) {
-	struct Node* temp1 = (Node*)malloc(sizeof(struct Node));
+	struct Node* temp1 = (struct Node*)malloc(sizeof(struct Node));
 	temp1->data = x;
 	temp1->next = head;
 	head = temp1;
