@@ -69,14 +69,18 @@ struct BSTNode* Print(struct BSTNode* root) {
 int main() {
 	struct BSTNode* root = NULL;//定义一个空树.
 	int n;
-	root=InsertBST(root,10);//大概是这个样子：                   10
-	root=InsertBST(root, 12);//                            
-	root=InsertBST(root, 8);//                             8         12
-	root=InsertBST(root, 3);//
-	root=InsertBST(root, 1);//                          3     9   11    13
-	root=InsertBST(root, 9);//                          
-	root=InsertBST(root, 11);//                     1
-	root=InsertBST(root, 13);//
-	scanf_s("%d", &n);
-	printf("%c", Find(root, n));
+	root = InsertBST(root, 10);//大概是这个样子：                   10
+	root = InsertBST(root, 12);//                            
+	root = InsertBST(root, 8);//                             8         12
+	root = InsertBST(root, 3);//
+	root = InsertBST(root, 1);//                          3     9   11    13
+	root = InsertBST(root, 9);//                          
+	root = InsertBST(root, 11);//                     1
+	root = InsertBST(root, 13);//
+	printf("键入回车以开始查找：\n");
+	while (getchar() != EOF) {
+		printf("请输出需要查找的值：\n");
+		scanf_s("%d", &n);
+		printf("值为：%c\n", Find(root, n));
+	}
 }
